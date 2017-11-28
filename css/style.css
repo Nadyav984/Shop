@@ -150,43 +150,42 @@ li a{
     margin: 0 auto;
 }
 .content{
-    height: auto;
+    height: 2000px;
     padding: 0px 155px;
     position: relative;
     font-family: 'Open Sans', sans-serif;
     color: #635f57;   
     margin: 15px 0;      
 }
-.Featured-Products{
+.Featured-Products, .Staff-pick, .New-Products{
     height: auto;
-    width: 62%;
+    width: 78%;
     text-transform: uppercase;
     text-align: left;
     padding: 25px 5px 10px 5px;
     float: left;
 }
-.Staff-pick{
-   width: 62%;
-   text-transform: uppercase;
-   text-align: left;
-   padding: 25px 5px 10px 5px;
-   float: left;
-}
- .New-Products{
-    width: 62%;
-    text-transform: uppercase;
-    text-align: left;
-    padding: 25px 5px 10px 5px;
-    float: left;
- }
+
 .photo{
     /*z-index: 1;*/
     float: left;
     height: 300px;
-    width: 27%;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #eff1f0;
+    width: 30%;
+    background-color: #eff1f0;
+    border: 10px solid white;
     margin: 10px 20px 10px 0;
+    box-shadow: 0px 0px 8px #eff1f0;
+
+}
+.advert{
+    float: left;
+    height: 400px;
+    width: 28%;
+    background-color: #eff1f0;
+    border: 10px solid white;
+    margin: 10px 20px 10px 0;
+    box-shadow: 0px 0px 8px #eff1f0;
+    top: 25px;
 
 }
 
