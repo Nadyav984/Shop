@@ -147,14 +147,23 @@ li a{
     position: absolute;
     border-radius: 50%;
     background-color: white; 
+
 }
 .button-left{
     left: 50px;
 }
 .button-right{  
     right: 50px;
-
 }
+.angle-right, .angle-left{
+    color: #cdcdcd;           
+    top: 0px;
+    bottom: 0;
+
+    margin: auto;
+    display: inline-block;
+}
+
 .baner{
     height: 55vh;
     position: relative;
@@ -170,7 +179,7 @@ li a{
     background: #fff;
 }
 .content{
-    margin: 15px 0;      
+    margin: 30px 0;      
     padding: 0px 9%;
     color: #635f57;   
     min-height: 765px;
@@ -238,9 +247,27 @@ p{
 .background-photo-9{
     background-image: url(../img/Featured_product-9.png);
 }
+.background-photo-10{
+    background-image: url(../img/Staff_pick-1.png);
+}
+.background-photo-11{
+    background-image: url(../img/Staff_pick-2.png);
+}
+.background-photo-12{
+    background-image: url(../img/Staff_pick-3.png);
+}
+.background-photo-13{
+    background-image: url(../img/New_product-1.png);
+}
+.background-photo-14{
+    background-image: url(../img/New_product-2.png);
+}
+.background-photo-15{
+    background-image: url(../img/New_product-3.png);
+}
 .info-product{
     height: 83px;
-    width: 234px;
+    width: 152px;
     font-size: 14px;
     padding: 11px 2px;   
     text-transform:none;
@@ -249,25 +276,28 @@ p{
 }
 .name-of-product w300{
     height: 25px;
-    width: 100px;
+    width: 152px;
     color: #656565;
     /* background-color: rgb(17, 57, 73);  */
     font-family: 'Open Sans', sans-serif;
 }
 .price-of-product{
-    width: 100px;    
+    width: 140px;    
     font-size: 18px;
     color: #7eb123;
     font-family: 'Open Sans', sans-serif;    
+}
+s{
+    color: #656565;
+    font-size: 14px;    
 }
 .bucket{
     height: 60px;
     width: 60px;
     background-color: #7eb123;
     border-radius: 50%;
-margin-left: 170px;
-
-
+    float: right;
+    margin: 12px 14px 12px 2px;
 }
 .left-menu{
     top:0;
@@ -275,6 +305,7 @@ margin-left: 170px;
     width: 250px;
     position: absolute;
     display: inline-block;
+    margin-top: 20px;
 }
 .advert{
     width: 100%;
