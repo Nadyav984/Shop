@@ -157,10 +157,8 @@ li a{
 }
 .angle-right, .angle-left{
     color: #cdcdcd;           
-    top: 0px;
-    bottom: 0;
 
-    margin: auto;
+    margin: 7px 26px;
     display: inline-block;
 }
 
@@ -174,7 +172,7 @@ li a{
 }
 /*----------------------------------------------------------*/
 .main-section{
-    height: auto;              
+    height: auto;
     margin: 0 auto;
     background: #fff;
 }
@@ -291,13 +289,19 @@ s{
     color: #656565;
     font-size: 14px;    
 }
-.bucket{
-    height: 60px;
-    width: 60px;
+.basket{
+    height: 50px;
+    width: 50px;
     background-color: #7eb123;
     border-radius: 50%;
     float: right;
     margin: 12px 14px 12px 2px;
+}
+.icon-basket{
+    margin-left: 12px;
+    margin-top: 12px;
+    color: white;
+
 }
 .left-menu{
     top:0;
@@ -331,19 +335,15 @@ s{
     background-image:url(../img/advert-1.png);
 }
 .btn-info{
-    z-index: 3;
-    left: 50px;
-    bottom: 15px;
+    margin: auto;
     font-size: 14px;
     color: #ffffff;
+    margin-left: 27%;
+    margin-top: 230px;
     border-radius: 0px;
-    position: absolute;
     align-items: center;
     background: #4cb1ca;
     text-decoration: none;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    padding: 10px 20px 10px 20px;
     font-family: 'Open Sans', sans-serif;
     }
 .scroll-advert{
@@ -378,6 +378,13 @@ s{
     text-align: center; 
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
+}
+.news{
+    text-align: center;
+}
+.hr-center{
+    margin-left:  25%;
+    margin-right: 25%;
 }
 #input-news{
     font-size: 14px;
