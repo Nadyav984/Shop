@@ -3,7 +3,7 @@ var app = express();
 var path = require('path');
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host: '127.0.0.1',
+  host: '192.168.0.42',
   user: 'nvasylyshyn',
   password: '9651',
   database: 'shop'
@@ -32,8 +32,7 @@ LEFT JOIN shop.sale s ON p.id = s.product_id`, function (error, results, fields)
       }
       return res.json(results)
     });
-
-
-
   })
-app.listen(8080);
+app.listen(8080,(params) => {
+  console.log('Magic happens on 8080')
+});

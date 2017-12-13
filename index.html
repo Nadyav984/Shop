@@ -8,11 +8,30 @@
     <link href="./assets/css/Open-sans.css" rel="stylesheet">
     <link href="./assets/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <style>
+        .template {
+            display: none;
+        }
+    </style>
     <script>
         $(document).ready(function ($) {
             $.get('/products')
                 .done(function (data) {
                     console.log(data)
+                    data.forEach(element => {
+                        let newItem = $('.template').clone()
+                        newItem.find('.name-of-product').text(element.name)
+                        if(element.discount){
+                            newItem.find('.old-price').text(element.price)
+                            newItem.find('.price').text((element.price - (element.price/100*element.discount)).toFixed(2))
+                            
+                        }else{
+                            newItem.find('.price').text(element.price)
+                            
+                        }
+                        newItem.removeClass('template')
+                        $('.product-BD').append(newItem)
+                    });
                 })
                 .fail(function (error) {
                     console.log(error);
@@ -124,255 +143,254 @@
             <div class="products-content"></div>
             <div class="product-BD">
                 <p>Products bd</p>
-                                <div class="product-padd">
-                                    <div class="new"></div>
-                                    <div class="product">
-                                        <div class="background-photo-1"></div>
-                                        <div class="info-product">
-                                            <div class="name-of-product w300">Lorem Ipsum is simply.</div>
-                                            <div class="price-of-product w300">$600.00</div>
-                                        </div>
-                                        <div class="basket">
-                                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
-                                    </div
-            </div>
-
-            <div class="Featured-Products">
-                <p>Featured Products</p>
-                <div class="product-padd">
+                <div class="product-padd template">
                     <div class="new"></div>
                     <div class="product">
                         <div class="background-photo-1"></div>
                         <div class="info-product">
-                            <div class="name-of-product w300">Lorem Ipsum is simply.</div>
-                            <div class="price-of-product w300">$600.00</div>
+                            <div class="name-of-product w300">Lorem Ipsum is simply</div>
+                            <div class="price-of-product w300"><s class="old-price"></s><span class="price"></span></div>
                         </div>
                         <div class="basket">
                             <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
                         </div>
                     </div>
-                </div>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-2"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Nullam vestibulum.</div>
-                            <div class="price-of-product w300">$500.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="sale"></div>
-                    <div class="product">
-                        <div class="background-photo-3"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Donec et lorem suscipit.</div>
-                            <div class="price-of-product w300">$750.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-4"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Curabitur pretium dui.</div>
-                            <div class="price-of-product w300">$500.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="new"></div>
-                    <div class="product">
-                        <div class="background-photo-5"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Lorem Ipsum is simply.</div>
-                            <div class="price-of-product w300">$350.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-6"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Sed tempus tellus.</div>
-                            <div class="price-of-product w300">$480.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="new"></div>
-                    <div class="product">
-                        <div class="background-photo-7"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Lorem Ipsum is simply.</div>
-                            <div class="price-of-product w300">$500.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="sale"></div>
-                    <div class="product">
-                        <div class="background-photo-8"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Mauris viverra magna.</div>
-                            <div class="price-of-product w300">$460.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="new"></div>
-                    <div class="product">
-                        <div class="background-photo-9"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Donec et lorem suscipit.</div>
-                            <div class="price-of-product w300">$500.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="Staff-pick">
-                <p>Staff pick</p>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-10"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Lorem Ipsum is simply.</div>
-                            <div class="price-of-product w300">$500.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="new"></div>
-                    <div class="product">
-                        <div class="background-photo-11"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Etiam egestas velit.</div>
-                            <div class="price-of-product w300">
-                                <s>$460</s> $200.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-12"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Mauris viverra magna.</div>
-                            <div class="price-of-product w300">$370.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="New-Products">
-                <p>New Products</p>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-13"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Sed tempus tellus.</div>
-                            <div class="price-of-product w300">$90.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="new"></div>
-                    <div class="product">
-                        <div class="background-photo-14"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Nulla accumsan lect.</div>
-                            <div class="price-of-product w300">$60.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-padd">
-                    <div class="product">
-                        <div class="background-photo-15"></div>
-                        <div class="info-product">
-                            <div class="name-of-product w300">Lorem Ipsum is simply.</div>
-                            <div class="price-of-product w300">$378.00</div>
-                        </div>
-                        <div class="basket">
-                            <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="left-menu">
-            <div class="advert">
-                <div class="name-advert">
-                    Featured Glass
-                </div>
-                <div class="advert-1">
-                    <button type="button" class="btn btn-info w300">Check it Out</button>
-                </div>
-                <div class="scroll-advert">
-                    <div class="btn-scroll-1"></div>
-                    <div class="btn-scroll-2"></div>
-                    <div class="btn-scroll-3"></div>
-                </div>
-                <div class="advert-2"></div>
-            </div>
-            <div class="sing-up">
-                <div class="news-letters">
-                    newsletters signup
-                </div>
-                <div class="news w300">
-                    Lorem ipsum dolor sit amen, dolor imun ra adlip
-                    <hr class="hr-center">
-                    <input type="text" id="input-news">
+                </div> </div>
 
-                    <button type="button" class="btn btn-success w300">Subscribe</button>
+                <div class="Featured-Products">
+                    <p>Featured Products</p>
+                    <div class="product-padd">
+                        <div class="new"></div>
+                        <div class="product">
+                            <div class="background-photo-1"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Lorem Ipsum is simply.</div>
+                                <div class="price-of-product w300">$600.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-2"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Nullam vestibulum.</div>
+                                <div class="price-of-product w300">$500.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="sale"></div>
+                        <div class="product">
+                            <div class="background-photo-3"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Donec et lorem suscipit.</div>
+                                <div class="price-of-product w300">$750.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-4"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Curabitur pretium dui.</div>
+                                <div class="price-of-product w300">$500.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="new"></div>
+                        <div class="product">
+                            <div class="background-photo-5"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Lorem Ipsum is simply.</div>
+                                <div class="price-of-product w300">$350.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-6"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Sed tempus tellus.</div>
+                                <div class="price-of-product w300">$480.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="new"></div>
+                        <div class="product">
+                            <div class="background-photo-7"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Lorem Ipsum is simply.</div>
+                                <div class="price-of-product w300">$500.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="sale"></div>
+                        <div class="product">
+                            <div class="background-photo-8"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Mauris viverra magna.</div>
+                                <div class="price-of-product w300">$460.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="new"></div>
+                        <div class="product">
+                            <div class="background-photo-9"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Donec et lorem suscipit.</div>
+                                <div class="price-of-product w300">$500.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="scroll-advert">
-                    <div class="btn-scroll"></div>
-                    <div class="btn-scroll"></div>
-                    <div class="btn-scroll"></div>
+                <div class="Staff-pick">
+                    <p>Staff pick</p>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-10"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Lorem Ipsum is simply.</div>
+                                <div class="price-of-product w300">$500.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="new"></div>
+                        <div class="product">
+                            <div class="background-photo-11"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Etiam egestas velit.</div>
+                                <div class="price-of-product w300">
+                                    <s>$460</s> $200.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-12"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Mauris viverra magna.</div>
+                                <div class="price-of-product w300">$370.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="advert-2"></div>
+                <div class="New-Products">
+                    <p>New Products</p>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-13"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Sed tempus tellus.</div>
+                                <div class="price-of-product w300">$90.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="new"></div>
+                        <div class="product">
+                            <div class="background-photo-14"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Nulla accumsan lect.</div>
+                                <div class="price-of-product w300">$60.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-padd">
+                        <div class="product">
+                            <div class="background-photo-15"></div>
+                            <div class="info-product">
+                                <div class="name-of-product w300">Lorem Ipsum is simply.</div>
+                                <div class="price-of-product w300">$378.00</div>
+                            </div>
+                            <div class="basket">
+                                <i class="fa fa-shopping-basket icon-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="left-menu">
+                <div class="advert">
+                    <div class="name-advert">
+                        Featured Glass
+                    </div>
+                    <div class="advert-1">
+                        <button type="button" class="btn btn-info w300">Check it Out</button>
+                    </div>
+                    <div class="scroll-advert">
+                        <div class="btn-scroll-1"></div>
+                        <div class="btn-scroll-2"></div>
+                        <div class="btn-scroll-3"></div>
+                    </div>
+                    <div class="advert-2"></div>
+                </div>
+                <div class="sing-up">
+                    <div class="news-letters">
+                        newsletters signup
+                    </div>
+                    <div class="news w300">
+                        Lorem ipsum dolor sit amen, dolor imun ra adlip
+                        <hr class="hr-center">
+                        <input type="text" id="input-news">
+
+                        <button type="button" class="btn btn-success w300">Subscribe</button>
+                    </div>
+                    <div class="scroll-advert">
+                        <div class="btn-scroll"></div>
+                        <div class="btn-scroll"></div>
+                        <div class="btn-scroll"></div>
+                    </div>
+                    <div class="advert-2"></div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <!--SECTION: ORDER -->
     <div class="footer">
