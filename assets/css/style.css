@@ -210,13 +210,11 @@ li a {
     font-family: 'Open Sans', sans-serif;
 }
 .product-BD,
-.Featured-Products,
-.Staff-pick,
-.New-Products {
+.new-products {
     height: auto;
     font-size: 24px;
     text-align: left;
-    display: inline-block;
+    display: table;
     text-transform: uppercase;
     padding: 25px 5px 5px 5px;
 }
@@ -266,21 +264,8 @@ p {
     left: 0px;
 }
 
-.background-photo-1,
-.background-photo-2,
-.background-photo-3,
-.background-photo-4,
-.background-photo-5,
-.background-photo-6,
-.background-photo-7,
-.background-photo-8,
-.background-photo-9,
-.background-photo-10,
-.background-photo-11,
-.background-photo-12,
-.background-photo-13,
-.background-photo-14,
-.background-photo-15 {
+
+.background-photo {
     float: left;
     margin: auto;
     width: 234px;
@@ -288,66 +273,6 @@ p {
     background-color: #eff1f0;
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.background-photo-1 {
-    background-image: url(../img/Featured_product-1.png);
-}
-
-.background-photo-2 {
-    background-image: url(../img/Featured_product-2.png);
-}
-
-.background-photo-3 {
-    background-image: url(../img/Featured_product-3.png);
-}
-
-.background-photo-4 {
-    background-image: url(../img/Featured_product-4.png);
-}
-
-.background-photo-5 {
-    background-image: url(../img/Featured_product-5.png);
-}
-
-.background-photo-6 {
-    background-image: url(../img/Featured_product-6.png);
-}
-
-.background-photo-7 {
-    background-image: url(../img/Featured_product-7.png);
-}
-
-.background-photo-8 {
-    background-image: url(../img/Featured_product-8.png);
-}
-
-.background-photo-9 {
-    background-image: url(../img/Featured_product-9.png);
-}
-
-.background-photo-10 {
-    background-image: url(../img/Staff_pick-1.png);
-}
-
-.background-photo-11 {
-    background-image: url(../img/Staff_pick-2.png);
-}
-
-.background-photo-12 {
-    background-image: url(../img/Staff_pick-3.png);
-}
-
-.background-photo-13 {
-    background-image: url(../img/New_product-1.png);
-}
-
-.background-photo-14 {
-    background-image: url(../img/New_product-2.png);
-}
-
-.background-photo-15 {
-    background-image: url(../img/New_product-3.png);
 }
 
 .info-product {
@@ -400,6 +325,8 @@ s {
     position: absolute;
     display: inline-block;
     margin-top: 20px;
+    background-color: white;
+    
 }
 
 .advert {
