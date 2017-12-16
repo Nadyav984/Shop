@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Poppins';
+
+	font-size:14px;
+  font-style: normal;
+
+
+  src: local('Poppins Medium'), local('Poppins-Medium'), url(https://fonts.gstatic.com/s/poppins/v5/yQWaOD4iNU5NTY0apN-qj_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+}

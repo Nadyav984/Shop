@@ -15,6 +15,7 @@
   "homepage": "https://bitbucket.org/anovodarskiy/shop#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "moment": "^2.19.4",
     "mysql": "github:mysqljs/mysql"
   }
 }

@@ -4,13 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link href="./assets/css/font-awesome.min.css" rel="stylesheet">
-
+  <link href="./assets/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style-admin.css">
+  <!-- <link href="./assets/css/font-awesome.poppin.css" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:500" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+  
   <title>Document</title>
+  <script>
+  moment().format('LT'); 
+  </script>
 </head>
 <body>
   <div class="content">
+      <!--HEADER-->
+      <div class="header">
+        <div class="bars">
+            <i class="fa fa-lg fa-bars" aria-hidden="true"></i>
+        </div>
+          <div class="log">
+          <div class="user-name">
+              <i class="fa fa-lg fa-user-circle" aria-hidden="true"></i>
+          </div>
+          <div class="log-out"> LOG OUT
+              <i class="fa fa-lg fa-sign-out" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <!--LEFT MENU-->
       <div class="left-menu">
         <div class="Home">
             <i class="fa fa-home menu-icons" aria-hidden="true"></i>
@@ -28,8 +50,27 @@
             <i class="fa fa-wrench menu-icons" aria-hidden="true"></i>
         </div>
       </div>
-      <div class="main-section">
-        <table>
+
+      <!--MAIN SECTION-->
+      <div class="main-section-table">
+        <table class="table box-shadow">
+          <tr>
+            <th>DETAILS</th>
+            <th> </th>
+            <th> </th>
+            <th></th>
+            <th id="time"></th>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+            <th><button class="add">
+              <div class="btn-add">ADD</div>
+              <div id="icon-add">
+                  <i class="fa fa-2x fa-cart-arrow-down" aria-hidden="true"></i>
+              </div>
+                </button>
+            </th>
+          </tr>
           <tr>
             <th>#</th>
             <th>User name</th>
@@ -49,7 +90,14 @@
             <td>&infin;</td>
             <td>&infin;</td>
             <td>&infin;</td>
-            <td>&infin;</td>            
+            <td> 
+              <buttun class="edit">
+                  <i class="fa fa-lg fa-pencil-square-o icon-edit" aria-hidden="true"></i>
+              </buttun>
+              <buttun class="delete">
+                <i class="fa fa-lg fa-times icon-delete" aria-hidden="true"></i>
+              </buttun>
+            </td>     
           </tr>
           <tr>
             <td>&infin;</td>
@@ -60,7 +108,14 @@
             <td>&infin;</td>
             <td>&infin;</td>
             <td>&infin;</td>
-            <td>&infin;</td>
+            <td> 
+              <buttun class="edit">
+                  <i class="fa fa-lg fa-pencil-square-o icon-edit" aria-hidden="true"></i>                  
+              </buttun>
+              <buttun class="delete">
+                <i class="fa fa-lg fa-times icon-delete" aria-hidden="true"></i>
+              </buttun>
+            </td>
           </tr>
           <tr>
             <td>&infin;</td>
@@ -71,7 +126,14 @@
             <td>&infin;</td>
             <td>&infin;</td>
             <td>&infin;</td>
-            <td>&infin;</td>
+            <td> 
+              <buttun class="edit">
+                  <i class="fa fa-lg fa-pencil-square-o icon-edit" aria-hidden="true"></i>                  
+              </buttun>
+              <buttun class="delete">
+                <i class="fa fa-lg fa-times icon-delete" aria-hidden="true"></i>
+              </buttun>
+            </td>
           </tr>
           <tr>
             <td>&infin;</td>
@@ -82,7 +144,14 @@
             <td>&infin;</td>
             <td>&infin;</td>
             <td>&infin;</td>
-            <td>&infin;</td>
+            <td> 
+              <buttun class="edit">
+                  <i class="fa fa-lg fa-pencil-square-o icon-edit" aria-hidden="true"></i>                  
+              </buttun>
+              <buttun class="delete">
+                <i class="fa fa-lg fa-times icon-delete" aria-hidden="true"></i>
+              </buttun>
+            </td>
           </tr>
           <tr>
             <td>&infin;</td>
@@ -93,7 +162,14 @@
             <td>&infin;</td>
             <td>&infin;</td>
             <td>&infin;</td>
-            <td>&infin;</td>
+            <td> 
+              <buttun class="edit">
+                  <i class="fa fa-lg fa-pencil-square-o icon-edit" aria-hidden="true"></i>                  
+              </buttun>
+              <buttun class="delete">
+                <i class="fa fa-lg fa-times icon-delete" aria-hidden="true"></i>
+              </buttun>
+            </td>
           </tr>
           <tr>
             <td>&infin;</td>
@@ -104,10 +180,37 @@
             <td>&infin;</td>
             <td>&infin;</td>
             <td>&infin;</td>
-            <td>&infin;</td>
+            <td> 
+              <buttun class="edit">
+                  <i class="fa fa-lg fa-pencil-square-o icon-edit" aria-hidden="true"></i>                  
+              </buttun>
+              <buttun class="delete">
+                <i class="fa fa-lg fa-times icon-delete" aria-hidden="true"></i>
+              </buttun>
+            </td>
           </tr>
         </table>
+    </div>
+    <div class="registration-form">
+      <div class="registration">
+        <h3>Registration Form</h3>
+        <form name="login" id="registrationform" novalidate="true" >
+           <div> User name:
+                <input type="text" name="username" id="username" title="Users name should begin with:user_" placeholder="Enter your user name"></div>
+           <div> Password:
+                <input type="text" name="password" id="password"  title="Min 8 letter password, with at least a symbol, upper and lower case letters and a number" placeholder="Enter your password"></div>  
+            <div> Age:
+                <input type="text" name="age" id="age" size="20" title="Your age should includ only number" placeholder="Enter your age..."> </div>   
+            <div> Email:
+                <input type="text" name="email" id="email" placeholder="Enter your email"> </div>        
+            <div> Birthday:
+                <input type="date" name="date" id="date"> </div>                          
+            <div>
+                <input type="submit" id="btn" value="Registrate"></div>
+            </form>
+    </div>
     </div>
   </div>
 </body>
 </html>
+<script type="text/javascript" src="js/script.js"></script>
